@@ -1,5 +1,4 @@
-$logo-color: #1a1a1a;
-$accent-color: #5ff195;
+@use 'src/app/styles/colors.scss';
 
 .navbar {
   display: flex;
@@ -7,9 +6,9 @@ $accent-color: #5ff195;
   width: 100%;
   margin: 0;
   padding: 0 1em;
-  color: $logo-color;
-  background-color: rgba(245,245,245,1);
-  border-bottom: 1px solid rgba($logo-color, 0.4);
+  color: colors.$logo-color;
+  background-color: colors.$white-color;
+  border-bottom: 1px solid rgba(colors.$logo-color, 0.4);
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
@@ -19,7 +18,7 @@ $accent-color: #5ff195;
     cursor: pointer;
     width: 156px;
     transition: 0.4s ease-in;
-    
+
     &:hover {
       opacity: 0.950;
     }
@@ -38,14 +37,14 @@ $accent-color: #5ff195;
     text-align: center;
     font-size: 1.050em;
     font-weight: normal;
-    color: rgba($logo-color, 0.8);
+    color: rgba(colors.$logo-color, 0.8);
     border-bottom: 1px solid transparent;
     padding-bottom: 6px;
     cursor: pointer;
     transition: 0.4s ease-out;
 
     &:hover {
-      border-bottom: 1px solid rgba($logo-color, 0.6);
+      border-bottom: 1px solid rgba(colors.$logo-color, 0.6);
     }
   }
 }

@@ -3,8 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { LoaderComponent } from './shared/components/loader/loader.component';
 import { NavigationComponent } from './shared/components/navigation/navigation.component';
+
+import { HomeModule } from './pages/home/home.module';
+import { BookmarksModule } from './pages/bookmarks/bookmarks.module';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +19,9 @@ import { NavigationComponent } from './shared/components/navigation/navigation.c
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HomeModule,
+    BookmarksModule
   ],
   providers: [],
   bootstrap: [AppComponent]

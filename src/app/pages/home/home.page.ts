@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
+  searchControl: FormControl = new FormControl('', [ Validators.required ]);
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+  doSearch(): void {
+    console.log('control', this.searchControl);
   }
 
 }

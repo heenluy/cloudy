@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { HomePage } from './home.page';
 
 
@@ -9,7 +11,8 @@ import { HomePage } from './home.page';
     HomePage
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ]
 })
 export class HomeModule { }
