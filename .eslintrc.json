@@ -38,7 +38,10 @@
         "@angular-eslint/component-class-suffix": [
           "error",
           {
-            "suffixes": [ "Page", "Component" ]
+            "suffixes": [
+              "Page",
+              "Component"
+            ]
           }
         ]
       }
@@ -51,6 +54,14 @@
         "plugin:@angular-eslint/template/recommended"
       ],
       "rules": {}
+    },
+    {
+      "files": [
+        "*.ts"
+      ],
+      "extends": [
+        "plugin:@ngrx/recommended"
+      ]
     }
   ]
 }
