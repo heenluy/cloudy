@@ -15,19 +15,17 @@ import * as fromHomeSelectors from './state/home.selectors';
 export class HomePage implements OnInit {
 
   searchControl: FormControl = new FormControl('', [ Validators.required ]);
-  prop: string = '';
 
   constructor(private store: Store<HomeState>) { }
 
   ngOnInit(): void {
     this.store.pipe(select(fromHomeSelectors.selectHomeText))
-      .subscribe(text => this.prop = text);
+      .subscribe();
   }
 
   doSearch(): void {
     const text = this.searchControl.value;
     this.store.dispatch(fromHomeActions.changeText({ text }));
-    console.log('from selectors', this.prop);
   }
 
 }
