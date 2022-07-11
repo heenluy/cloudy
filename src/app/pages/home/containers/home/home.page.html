@@ -26,7 +26,8 @@
   <app-loader class="loader" *ngIf="loading$ | async"></app-loader>
 
   <div class="card" *ngIf="!(loading$ | async) && !(error$ | async) && !!cityWeather$">
-    {{ (cityWeather$ | async)!.weather.description }}
+    <!-- {{ (cityWeather$ | async)!.weather.description }} -->
+    <app-home [cityWeather]="cityWeather$ | async"></app-home>
   </div>
 
   <div class="failure" *ngIf="!(loading$ | async) && (error$ | async)">

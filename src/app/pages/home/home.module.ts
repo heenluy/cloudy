@@ -5,16 +5,18 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
-import { HomePage } from './home.page';
+import { HomePage } from './containers/home/home.page';
 import { ComponentsModule } from '../../shared/components/components.module';
 
 import { homeReducer } from './state/home.reducer';
 import { HomeEffects } from './state/home.effects';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
   declarations: [
-    HomePage
+    HomePage,
+    HomeComponent
   ],
   imports: [
     CommonModule,
