@@ -1,15 +1,18 @@
 import { createReducer, Action, on } from '@ngrx/store';
 
 import * as fromHomeActions from './home.actions';
+import { CityWeather } from '../../../shared/models/weather.model';
+
+
 
 export interface HomeState {
-  entity: any,
+  entity: CityWeather,
   loading: boolean,
   error: boolean,
 }
 
 export const homeInitialState: HomeState = {
-  entity: undefined,
+  entity: {} as CityWeather,
   loading: false,
   error: false,
 }
@@ -25,7 +28,6 @@ const reducer = createReducer(
     ...state,
     entity,
     loading: false,
-    error: false
   })),
   on(fromHomeActions.loadCurrentWeatherFailed, state => ({
     ...state,

@@ -3,9 +3,19 @@ import { HomeState } from './home.reducer';
 
 
 // O mesmo passado no módulo
-export const selectHomeState: any = createFeatureSelector('home');
+export const selectHomeState = createFeatureSelector<HomeState>('home');
 
-export const selectHomeText = createSelector(
+export const selectCurrentWeather = createSelector(
   selectHomeState,
-  ( homeState: HomeState ) => homeState.text
+  ( homeState: HomeState ) => homeState.entity
+);
+
+export const selectCurrentWeatherLoading = createSelector(
+  selectHomeState,
+  ( homeState: HomeState ) => homeState.loading
+);
+
+export const selectCurrentWeatherError = createSelector(
+  selectHomeState,
+  ( homeState: HomeState ) => homeState.error
 );

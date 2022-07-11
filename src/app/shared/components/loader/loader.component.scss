@@ -1,0 +1,17 @@
+@use 'src/app/styles/colors.scss';
+
+.loading {
+  display: block;
+  height: 48px;
+  width: 48px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 4.25px solid colors.$white-color;
+  border-top-color: rgba(colors.$logo-color, 0.425);
+  animation: spin 0.8s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}

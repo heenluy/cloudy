@@ -7,6 +7,7 @@ import { map, mergeMap, catchError } from 'rxjs';
 
 import * as fromHomeActions from './home.actions';
 import { WeatherService } from '../../../shared/services/weather.service';
+import { CityWeather } from '../../../shared/models/weather.model';
 
 
 @Injectable()
@@ -20,7 +21,9 @@ export class HomeEffects {
         this.store.dispatch(fromHomeActions.loadCurrentWeatherFailed())
         return caught$;
       }),
-      map(( entity: any ) => fromHomeActions.loadCurrentWeatherSuccess({ entity }))
+      map(( entity: CityWeather ) => {
+        return fromHomeActions.loadCurrentWeatherSuccess({ entity })
+      })
     ),
     // Já vem ativada por padrão. Não deixa o effect morrer em caso de error.
     { useEffectsErrorHandler: true }

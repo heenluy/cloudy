@@ -1,22 +1,35 @@
-<div class="search">
-  <h3 class="search__title">Pesquisar por região</h3>
+<div class="container">
 
-  <div class="search__form">
-    <input
-      type="text"
-      [formControl]="searchControl"
-      placeholder="São Paulo..."
-      class="search__control"
-    >
-    <button
-      class="search__button"
-      [class]="{ disabled: !searchControl.valid }"
-      [disabled]="!searchControl.valid"
-      (click)="doSearch()"
-    >
-      Pesquisar
-    </button>
+  <div class="search">
+    <h3 class="search__title">Pesquisar por região</h3>
+
+    <div class="search__form">
+      <input
+        type="text"
+        [formControl]="searchControl"
+        placeholder="São Paulo..."
+        class="search__control"
+      >
+      <button
+        class="search__button"
+        [class]="{ disabled: !searchControl.valid }"
+        [disabled]="!searchControl.valid"
+        (click)="doSearch()"
+      >
+        Pesquisar
+      </button>
+    </div>
+
+    <!-- Auto Complete -->
   </div>
 
-  <!-- Auto Complete -->
+  <app-loader class="loader" *ngIf="loading$ | async"></app-loader>
+
+  <div class="card" *ngIf="!(loading$ | async) && !(error$ | async) && !!cityWeather$">
+    {{ (cityWeather$ | async)!.weather.description }}
+  </div>
+
+  <div class="failure" *ngIf="!(loading$ | async) && (error$ | async)">
+    <!-- Message -->
+  </div>
 </div>

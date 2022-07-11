@@ -1,5 +1,13 @@
 @use 'src/app/styles/colors.scss';
 
+.container {
+  display: block;
+  height: auto;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .search {
   display: flex;
   height: 25%;
@@ -48,4 +56,21 @@
       cursor: no-drop;
     }
   }
+}
+
+.loader {
+  display: block;
+  height: 58px;
+  width: 58px;
+  margin: 2.450em auto;
+}
+
+.card {
+  display: block;
+  height: 256px;
+  width: 80%;
+  margin: 0 auto;
+  background-color: colors.$white-color;
+  color: colors.$logo-color;
+  border-radius: 0.6em;
 }

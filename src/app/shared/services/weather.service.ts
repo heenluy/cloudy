@@ -16,7 +16,7 @@ export class WeatherService {
   constructor(private httpClient: HttpClient) {}
 
   public getCityWeatherByQuery(query: string): Observable<CityWeather> {
-    const params = new HttpParams({ fromObject: { b: query } });
+    const params = new HttpParams({ fromObject: { q: query } });
     return this.doGet('weather', params)
       .pipe(map(response => responseToCityWeather(response)));
   }

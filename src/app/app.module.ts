@@ -4,25 +4,24 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { LoaderComponent } from './shared/components/loader/loader.component';
-import { NavigationComponent } from './shared/components/navigation/navigation.component';
+
+import { ComponentsModule } from './shared/components/components.module';
 import { WeatherService } from './shared/services/weather.service';
 
 import { HomeModule } from './pages/home/home.module';
 import { BookmarksModule } from './pages/bookmarks/bookmarks.module';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoaderComponent,
-    NavigationComponent
   ],
   imports: [
     BrowserModule,
@@ -30,9 +29,11 @@ import { environment } from '../environments/environment';
     AppRoutingModule,
     HomeModule,
     BookmarksModule,
-    StoreModule.forRoot({}, {}),
+    ComponentsModule,
+    StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
+    StoreRouterConnectingModule.forRoot(),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
   ],
   providers: [WeatherService],
   bootstrap: [AppComponent]
