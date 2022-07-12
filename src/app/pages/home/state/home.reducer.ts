@@ -11,14 +11,15 @@ export interface HomeState {
   error: boolean,
 }
 
-export const homeInitialState: HomeState = {
+export const initialHomeState: HomeState = {
   entity: {} as CityWeather,
   loading: false,
   error: false,
 }
 
 const reducer = createReducer(
-  homeInitialState,
+  initialHomeState,
+  on(fromHomeActions.clearHomeState, () => initialHomeState),
   on(fromHomeActions.loadCurrentWeather, state => ({
     ...state,
     loading: true,

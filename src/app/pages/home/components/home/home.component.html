@@ -9,8 +9,8 @@
     </app-detailed-weather>
 
     <div class="card__actions">
-      <a class="card__link">Adicionar aos favoritos</a>
-      <a class="card__link">Ver detalhes</a>
+      <a class="card__link" (click)="onToggleBookmark()">Adicionar aos favoritos</a>
+      <a class="card__link" routerLink="details">Ver detalhes</a>
     </div>
   </div>
 </div>

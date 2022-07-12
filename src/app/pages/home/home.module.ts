@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { StoreModule } from '@ngrx/store';
@@ -21,6 +22,7 @@ import { HomeComponent } from './components/home/home.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    RouterModule,
     ComponentsModule,
     StoreModule.forFeature('home', homeReducer),
     EffectsModule.forFeature([HomeEffects])
