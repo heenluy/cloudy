@@ -1,0 +1,34 @@
+@use 'src/app/styles/colors.scss';
+
+.weather {
+  display: flex;
+  height: 65%;
+  width: 100%;
+  margin: 0;
+  padding: 0.650em;
+  flex-direction: column;
+  align-items: center;
+
+  &__main {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+
+    .desc > h3 {
+      margin: 0 0 5.5px 0;
+    }
+
+    .desc > span {
+      text-transform: capitalize;
+    }
+  }
+
+  &__misc {
+    display: inline-flex;
+    gap: 1em;
+
+    div {
+      color: rgba(colors.$logo-color, 0.650);
+    }
+  }
+}

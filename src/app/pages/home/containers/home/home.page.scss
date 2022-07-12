@@ -30,8 +30,9 @@
   }
 
   &__title {
-    color: colors.$logo-color;
+    color: rgba(colors.$logo-color, 0.750);
     font-size: 1.4em;
+    font-weight: 400;
     text-align: center;
   }
 
@@ -67,8 +68,8 @@
 
 .card {
   display: block;
-  height: 256px;
-  width: 80%;
+  height: auto;
+  width: auto;
   margin: 0 auto;
   background-color: initial;
 }

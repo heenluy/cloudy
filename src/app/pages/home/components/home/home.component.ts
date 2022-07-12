@@ -14,8 +14,8 @@ export class HomeComponent {
 
   constructor() { }
 
-  getCity(): string {
-    return `${ this.cityWeather.city.name } ${ this.cityWeather.city.country }`;
+  get city(): string {
+    return `${ this.cityWeather.city.name }, ${ this.cityWeather.city.country }`;
   }
 
 }

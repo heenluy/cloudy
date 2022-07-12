@@ -4,24 +4,29 @@
   display: block;
   height: 100%;
   width: 100%;
-  margin: 0;
+  margin: 2.5em 0 0 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: inherit;
 
   &__body {
     display: flex;
-    height: 256px;
-    width: 65%;
+    height: auto;
+    width: 100%;
     margin: 0 auto;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 0.250em;
+
   }
 
   &__title {
     text-align: center;
+    margin: 0;
+  }
+
+  &__details {
+    margin-bottom: 1em;
   }
 
   &__actions {
@@ -34,13 +39,15 @@
     background-color: colors.$white-color;
     font-size: 0.850em;
     padding: 8px 16px;
-    border-radius: 5px;
     cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid transparent;
     transition: 0.375s ease-in-out;
 
 
     &:hover {
-      background-color: colors.$accent-color;
+      border-color: rgba(colors.$logo-color, 0.4);
+      //background-color: colors.$accent-color;
     }
   }
 }

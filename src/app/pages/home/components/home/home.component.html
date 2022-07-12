@@ -1,6 +1,13 @@
 <div class="card">
   <div class="card__body">
-    <h2 class="card__title">{{ getCity() }}</h2>
+    <h2 class="card__title">{{ city }}</h2>
+
+    <app-detailed-weather
+      [weather]="cityWeather.weather"
+      class="card__details"
+    >
+    </app-detailed-weather>
+
     <div class="card__actions">
       <a class="card__link">Adicionar aos favoritos</a>
       <a class="card__link">Ver detalhes</a>

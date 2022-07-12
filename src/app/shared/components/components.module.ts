@@ -3,20 +3,23 @@ import { CommonModule } from '@angular/common';
 
 import { LoaderComponent } from './loader/loader.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { DetailedWeatherComponent } from './detailed-weather/detailed-weather.component';
 
 
 
 @NgModule({
   declarations: [
     LoaderComponent,
-    NavigationComponent
+    NavigationComponent,
+    DetailedWeatherComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
     LoaderComponent,
-    NavigationComponent
+    NavigationComponent,
+    DetailedWeatherComponent
   ]
 })
 export class ComponentsModule { }
