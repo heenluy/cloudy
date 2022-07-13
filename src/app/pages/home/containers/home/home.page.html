@@ -29,6 +29,7 @@
     <!-- {{ (cityWeather$ | async)!.weather.description }} -->
     <app-home
       [cityWeather]="cityWeather"
+      [isFavorite]="(isCurrentFavorite$ | async)!"
       (toggleBookmark)="onToggleBookmark()"
     >
     </app-home>

@@ -12,6 +12,7 @@ export class HomeComponent {
 
   @Input() cityWeather!: CityWeather | any;
   @Output() toggleBookmark = new EventEmitter();
+  @Input() isFavorite!: boolean;
 
   constructor() { }
 

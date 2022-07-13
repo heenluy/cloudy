@@ -1,1 +1,19 @@
-<p>bookmarks works!</p>
+<div class="container">
+
+  <h2 class="title">Meus favoritos</h2>
+  <h3 class="info" *ngIf="!(bookmarks$ | async)!.length">Nenhum favorito encontrado.</h3>
+
+  <div class="bookmarks" *ngIf="(bookmarks$ | async)!.length">
+    <ul class="bookmarks__list" *ngFor="let bookmark of (bookmarks$ | async)">
+      <li class="bookmarks__item">
+        <a class="item__link" href="#">{{ bookmark.name }}, {{ bookmark.country }}</a>
+        <button
+          class="item__button"
+          [title]="title"
+          (click)="removeBookmark(bookmark.id)"
+        >
+          <img [alt]="title" [src]="deleteIcon">
+        </button>
+      </li>
+    </ul>
+</div>
