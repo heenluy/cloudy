@@ -10,12 +10,14 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-
 import { ComponentsModule } from './shared/components/components.module';
 import { WeatherService } from './shared/services/weather.service';
 
 import { HomeModule } from './pages/home/home.module';
 import { BookmarksModule } from './pages/bookmarks/bookmarks.module';
+
+import { reducers } from './shared/state/app.recducer';
+
 import { environment } from '../environments/environment';
 
 
@@ -30,7 +32,7 @@ import { environment } from '../environments/environment';
     HomeModule,
     BookmarksModule,
     ComponentsModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot(reducers),
     EffectsModule.forRoot([]),
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
