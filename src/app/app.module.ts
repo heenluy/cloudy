@@ -17,6 +17,7 @@ import { HomeModule } from './pages/home/home.module';
 import { BookmarksModule } from './pages/bookmarks/bookmarks.module';
 
 import { reducers } from './shared/state/app.recducer';
+import { CustomRouterSerializer } from './shared/state/router/router.reducer';
 
 import { environment } from '../environments/environment';
 
@@ -34,7 +35,7 @@ import { environment } from '../environments/environment';
     ComponentsModule,
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([]),
-    StoreRouterConnectingModule.forRoot(),
+    StoreRouterConnectingModule.forRoot({ serializer: CustomRouterSerializer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
   ],
   providers: [WeatherService],
