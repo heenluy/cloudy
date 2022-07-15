@@ -16,7 +16,7 @@ import { WeatherService } from './shared/services/weather.service';
 import { HomeModule } from './pages/home/home.module';
 import { BookmarksModule } from './pages/bookmarks/bookmarks.module';
 
-import { reducers } from './shared/state/app.recducer';
+import { reducers } from './shared/state/app.reducer';
 import { CustomRouterSerializer } from './shared/state/router/router.reducer';
 
 import { environment } from '../environments/environment';

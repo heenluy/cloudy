@@ -1,0 +1,33 @@
+<div class="card">
+  <span class="card__span">{{ date }}</span>
+
+  <div class="card__icon">
+      <img [src]="icon">
+  </div>
+
+  <div class="card__sections">
+    <section>
+      <div class="temp">
+        {{ weather.minTemp }} {{ unitSymbol }} — {{ weather.maxTemp }} {{ unitSymbol }}
+      </div>
+    </section>
+
+    <section>
+      <div class="humidity">
+        Humidade: <strong>{{ weather.humidity }} %</strong>
+      </div>
+      <div class="wind-speed">
+        Velocidade do Vento: <strong>{{ weather.wind.speed }} m/s</strong>
+      </div>
+    </section>
+
+    <section>
+      <div class="sunrise">
+        Nascer do Sol: <strong>{{ unixToHourMinute(weather.sunrise) }}</strong>
+      </div>
+      <div class="sunset">
+        Pôr do Sol: <strong>{{ unixToHourMinute(weather.sunset) }}</strong>
+      </div>
+    </section>
+  </div>
+</div>

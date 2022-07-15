@@ -1,1 +1,31 @@
-<p>details works!</p>
+<div class="container">
+  <app-loader *ngIf="loading$ | async; else showTemplate"></app-loader>
+
+  <ng-template #showTemplate>
+    <ng-container *ngIf="!(error$ | async)">
+      <h2>{{ (details$ | async)!.city.name }}, {{ (details$ | async)!.city.country }}</h2>
+
+      <div class="details__card">
+        <app-detailed-weather
+          [weather]="(details$ | async)!.current"
+        >
+        </app-detailed-weather>
+      </div>
+
+      <h3 class="details__subtitle">Previsão para esta semana:</h3>
+
+      <app-daily-weather
+        *ngFor="let daily of (details$ | async)!.daily"
+        [dailyWeather]="daily"
+        [timezone]="(details$ | async)!.city.timeZone"
+        [unit]="(unit$ | async)!"
+      >
+      </app-daily-weather>
+
+    </ng-container>
+
+    <div class="details__error" *ngIf="(error$ | async)">
+      <h2>Ocorreu um erro.</h2>
+    </div>
+  </ng-template>
+</div>

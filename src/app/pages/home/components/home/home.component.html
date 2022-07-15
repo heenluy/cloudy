@@ -15,7 +15,13 @@
       >
         {{isFavorite ? 'Remover dos Favoritos' : 'Adicionar aos favoritos'}}
       </a>
-      <a class="card__link" routerLink="/details">Ver detalhes</a>
+      <a
+        class="card__link"
+        routerLink="/details"
+        [queryParams]="{ lat: cityWeather.city.coord.lat, lon: cityWeather.city.coord.lon }"
+      >
+        Ver detalhes
+      </a>
     </div>
   </div>
 </div>

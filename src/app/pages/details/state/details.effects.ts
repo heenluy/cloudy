@@ -9,7 +9,7 @@ import * as fromRouterSelectors from '../../../shared/state/router/router.select
 
 import { mergeMap, map, withLatestFrom, combineLatest, catchError } from 'rxjs';
 
-import { AppState } from '../../../shared/state/app.recducer';
+import { AppState } from '../../../shared/state/app.reducer';
 import { WeatherService } from '../../../shared/services/weather.service';
 
 

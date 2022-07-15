@@ -1,0 +1,46 @@
+@use 'src/app/styles/colors.scss';
+
+* {
+  margin: 0;
+}
+
+.card {
+  display: flex;
+  height: auto;
+  width: 46vw;
+  box-sizing: border-box;
+  padding: 1em;
+  flex-direction: column;
+  gap: 0.250em;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background-color: colors.$white-color;
+
+  &__span {
+    padding: 4px 9px;
+    border: 1px solid rgba(colors.$logo-color, 0.650);
+    border-radius: 3px;
+  }
+
+  &__sections {
+    display: flex;
+    height: auto;
+    width: 100%;
+    gap: 1.450em;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    section {
+      display: inline-flex;
+      gap: 0.850em;
+    }
+  }
+}
+
+.temp {
+  font-size: 1.210em;
+  font-weight: 900;
+  color: colors.$accent-color;
+}
