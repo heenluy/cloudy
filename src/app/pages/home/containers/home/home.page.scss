@@ -1,5 +1,7 @@
 @use 'src/app/styles/colors.scss';
 
+$control-width: 384px;
+
 .container {
   display: block;
   height: auto;
@@ -38,7 +40,7 @@
 
   &__control {
     padding: 6px;
-    width: 384px;
+    width: $control-width;
     text-align: left;
     outline: none;
     font-size: 1em;
@@ -56,6 +58,13 @@
       border: 1px solid rgba(colors.$logo-color, 0.4);
       cursor: no-drop;
     }
+  }
+
+  &__typeahead {
+    // background-color: colors.$accent-color;
+    width: calc($control-width + 94.88px);
+    margin-top: 0.350em;
+    //align-self: flex-start;
   }
 }
 

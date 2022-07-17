@@ -16,7 +16,7 @@ export class CitiesService {
   }
 
   getCities(query: string): Observable<CityTypeaheadItem[]> {
-    return this.http.get<{country: string}[]>('assets/db/cities.json')
+    return this.http.get<{country: string}[]>('assets/database/cities.json')
       .pipe(
         map(cities => {
           const search = new jsSearch.Search('geonameid');

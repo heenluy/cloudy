@@ -20,7 +20,11 @@
       </button>
     </div>
 
-    <!-- Auto Complete -->
+    <app-cities-typeaheade
+      class="search__typeahead"
+    >
+    </app-cities-typeaheade>
+
   </div>
 
   <app-loader class="loader" *ngIf="loading$ | async"></app-loader>
