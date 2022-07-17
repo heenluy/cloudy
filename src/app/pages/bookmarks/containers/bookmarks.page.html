@@ -6,7 +6,13 @@
   <div class="bookmarks" *ngIf="(bookmarks$ | async)!.length">
     <ul class="bookmarks__list" *ngFor="let bookmark of (bookmarks$ | async)">
       <li class="bookmarks__item">
-        <a class="item__link" href="#">{{ bookmark.name }}, {{ bookmark.country }}</a>
+        <a
+          class="item__link"
+          routerLink="/details"
+          [queryParams]="{lat: bookmark.coord.lat, lon: bookmark.coord.lon}"
+        >
+          {{ bookmark.name }}, {{ bookmark.country }}
+        </a>
         <button
           class="item__button"
           [title]="title"
