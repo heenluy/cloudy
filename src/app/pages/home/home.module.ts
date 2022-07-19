@@ -12,12 +12,14 @@ import { ComponentsModule } from '../../shared/components/components.module';
 import { homeReducer } from './state/home.reducer';
 import { HomeEffects } from './state/home.effects';
 import { HomeComponent } from './components/home/home.component';
+import { UnitSelectorComponent } from './containers/unit-selector/unit-selector.component';
 
 
 @NgModule({
   declarations: [
     HomePage,
-    HomeComponent
+    HomeComponent,
+    UnitSelectorComponent
   ],
   imports: [
     CommonModule,

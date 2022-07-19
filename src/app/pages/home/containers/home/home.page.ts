@@ -1,5 +1,6 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ComponentFactoryResolver, ApplicationRef, Injector } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { PortalOutlet, DomPortalOutlet, ComponentPortal } from '@angular/cdk/portal';
 
 import { Store } from '@ngrx/store';
 import { Observable, takeUntil, Subject, combineLatest, map } from 'rxjs';
@@ -7,6 +8,7 @@ import { Observable, takeUntil, Subject, combineLatest, map } from 'rxjs';
 import { CityWeather } from '../../../../shared/models/weather.model';
 import { CityTypeaheadItem } from '../../../../shared/models/city-typeahead-item.model';
 import { Bookmark } from '../../../../shared/models/bookmark.model';
+import { UnitSelectorComponent } from '../unit-selector/unit-selector.component';
 
 import { HomeState } from '../../state/home.reducer';
 import * as fromHomeActions from '../../state/home.actions';
@@ -33,8 +35,14 @@ export class HomePage implements OnInit, OnDestroy {
   isCurrentFavorite$!: Observable<boolean>;
 
   private componentDestroyed$ = new Subject();
+  private portalOutlet!: PortalOutlet;
 
-  constructor(private store: Store<HomeState>) { }
+  constructor(
+    private store: Store<HomeState>,
+    private componentFactoryResolver: ComponentFactoryResolver,
+    private appRef: ApplicationRef,
+    private injector: Injector
+  ){}
 
   ngOnInit(): void {
     this.searchControl = new FormControl('', [ Validators.required ]);
@@ -63,6 +71,8 @@ export class HomePage implements OnInit, OnDestroy {
         }
         return false;
       }));
+
+    this.setUpPortal();
   }
 
   ngOnDestroy(): void {
@@ -70,6 +80,7 @@ export class HomePage implements OnInit, OnDestroy {
     this.searchControl.reset;
     this.componentDestroyed$.next([]);
     this.componentDestroyed$.unsubscribe();
+    this.portalOutlet.detach();
   }
 
   doSearch(): void {
@@ -88,6 +99,19 @@ export class HomePage implements OnInit, OnDestroy {
     bookmark.coord = this.cityWeather.city.coord;
 
     this.store.dispatch(fromHomeActions.toggleBookmark({ entity: bookmark }));
+  }
+
+  private setUpPortal(): void {
+    const element = document.querySelector('#navbar-portal-outlet')!;
+
+    this.portalOutlet = new DomPortalOutlet(
+      element,
+      this.componentFactoryResolver,
+      this.appRef,
+      this.injector
+    );
+
+    this.portalOutlet.attach(new ComponentPortal(UnitSelectorComponent));
   }
 
 }
