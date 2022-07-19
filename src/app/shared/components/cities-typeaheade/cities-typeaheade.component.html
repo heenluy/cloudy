@@ -1,8 +1,27 @@
 <ng-select
   [items]="dataSource$ | async"
   bindLabel="name"
-  [minTermLength]="4"
+  loadingText="Carregando..."
+  [minTermLength]="3"
   [typeahead]="input$"
   placeholder="pesquisar com sugestões..."
+  [(ngModel)]="selectedItem"
+  [disabled]="disabled"
+  [loading]="loading"
+  (change)="onSelected()"
 >
+  <ng-template ng-loadingspinner-tmp>
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+  </ng-template>
+
+  <ng-template ng-option-tmp let-item="item">
+        {{item.name}} <br/>
+        <small>{{item.country}}</small>
+  </ng-template>
+
 </ng-select>

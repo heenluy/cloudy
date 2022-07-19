@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import { Observable, takeUntil, Subject, combineLatest, map } from 'rxjs';
 
 import { CityWeather } from '../../../../shared/models/weather.model';
+import { CityTypeaheadItem } from '../../../../shared/models/city-typeahead-item.model';
 import { Bookmark } from '../../../../shared/models/bookmark.model';
 
 import { HomeState } from '../../state/home.reducer';
@@ -22,6 +23,7 @@ export class HomePage implements OnInit, OnDestroy {
 
   cityWeather: CityWeather | any;
   searchControl!: FormControl;
+  searchControlWithAutocomplete!: FormControl;
 
   loading$!: Observable<boolean>;
   error$!: Observable<boolean>;
@@ -36,11 +38,23 @@ export class HomePage implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.searchControl = new FormControl('', [ Validators.required ]);
+    this.searchControlWithAutocomplete = new FormControl(undefined);
+
     this.loading$ = this.store.select(fromHomeSelectors.selectCurrentWeatherLoading);
     this.error$ = this.store.select(fromHomeSelectors.selectCurrentWeatherError);
     this.cityWeather$ = this.store.select(fromHomeSelectors.selectCurrentWeather);
 
     this.bookmarkList$ = this.store.select(fromBookmarksSelectors.selectBookmarkList);
+
+    this.searchControlWithAutocomplete.valueChanges
+      .pipe(takeUntil(this.componentDestroyed$))
+      .subscribe((value: CityTypeaheadItem) => {
+        if(!!value) {
+          this.store.dispatch(fromHomeActions.loadCurrentWeather({ query: value.name }))
+        }
+        this.store.select(fromHomeSelectors.selectCurrentWeather)
+          .subscribe(entity => this.cityWeather = entity);
+      })
 
     this.isCurrentFavorite$ = combineLatest([this.cityWeather$, this.bookmarkList$])
       .pipe(map(([current, list]) => {

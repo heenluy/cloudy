@@ -22,6 +22,7 @@
 
     <app-cities-typeaheade
       class="search__typeahead"
+      [formControl]="searchControlWithAutocomplete"
     >
     </app-cities-typeaheade>
 
@@ -40,6 +41,6 @@
   </div>
 
   <div class="failure" *ngIf="!(loading$ | async) && (error$ | async)">
-    <!-- Message -->
+    Ocorreu um erro.
   </div>
 </div>
