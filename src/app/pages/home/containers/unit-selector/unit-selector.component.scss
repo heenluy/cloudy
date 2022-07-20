@@ -1,4 +1,5 @@
-@use 'src/app/styles/colors.scss';
+@use 'src/app/styles/themes/light.scss' as default;
+@use 'src/app/styles/themes/dark.scss' as dark;
 
 * {
   margin: 0;
@@ -18,7 +19,11 @@
   &__span {
     font-size: normal;
     font-weight: 400;
-    color: rgba(colors.$logo-color, 0.450);
+    color: rgba(default.$default-color, 0.450);
+
+    &.dark {
+      color: rgba(dark.$default-color, 0.850);
+    }
   }
 
   &__list {
@@ -26,6 +31,11 @@
     height: 100%;
     width: auto;
     gap: 1em;
+    color: rgba(default.$default-color, 0.450);
+
+    &.dark {
+      color: rgba(dark.$default-color, 0.850);
+    }
   }
 }
 
@@ -43,14 +53,14 @@
   font-size: 1.1em;
 
   &-primary {
-    color: colors.$accent-color;
-    border: 1px dashed colors.$accent-color;
-    background-color: rgba(colors.$accent-color, 0.150);
+    color: default.$accent-color;
+    border: 1px dashed default.$accent-color;
+    background-color: rgba(default.$accent-color, 0.150);
     padding: 0.250em 0.450em;
   }
 
   &-dark {
-    color: rgba(colors.$logo-color, 0.450);
+
     background-color: initial;
   }
 

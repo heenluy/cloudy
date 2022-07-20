@@ -1,4 +1,4 @@
-@use 'src/app/styles/colors.scss';
+@use 'src/app/styles/themes/light.scss' as default;
 
 $control-width: 384px;
 
@@ -32,7 +32,7 @@ $control-width: 384px;
   }
 
   &__title {
-    color: rgba(colors.$logo-color, 0.750);
+    color: rgba(default.$default-color, 0.750);
     font-size: 1.4em;
     font-weight: 400;
     text-align: center;
@@ -47,24 +47,22 @@ $control-width: 384px;
   }
 
   &__button {
-    color: colors.$logo-color;
-    background-color: colors.$white-color;
-    border: 1px solid rgba(colors.$logo-color, 0.750);
+    color: default.$default-color;
+    background-color: $contrast-color;
+    border: 1px solid rgba(default.$default-color, 0.750);
     border-radius: 2px;
     cursor: pointer;
 
     &.disabled {
-      color: rgba(colors.$logo-color, 0.4);
-      border: 1px solid rgba(colors.$logo-color, 0.4);
+      color: rgba(default.$default-color, 0.4);
+      border: 1px solid rgba(default.$default-color, 0.4);
       cursor: no-drop;
     }
   }
 
   &__typeahead {
-    // background-color: colors.$accent-color;
     width: calc($control-width + 94.88px);
     margin-top: 0.350em;
-    //align-self: flex-start;
   }
 }
 

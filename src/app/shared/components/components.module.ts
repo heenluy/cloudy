@@ -10,6 +10,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { DetailedWeatherComponent } from './detailed-weather/detailed-weather.component';
 import { CitiesTypeaheadeComponent } from './cities-typeaheade/cities-typeaheade.component';
 
+import { ThemeService } from '../services/theme.service';
+
 
 @NgModule({
   declarations: [
@@ -29,6 +31,9 @@ import { CitiesTypeaheadeComponent } from './cities-typeaheade/cities-typeaheade
     NavigationComponent,
     DetailedWeatherComponent,
     CitiesTypeaheadeComponent
+  ],
+  providers: [
+    ThemeService
   ]
 })
 export class ComponentsModule { }

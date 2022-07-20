@@ -1,4 +1,4 @@
-@use 'src/app/styles/colors.scss';
+@use 'src/app/styles/themes/light.scss' as default;
 
 .card {
   display: block;
@@ -35,8 +35,8 @@
   }
 
   &__link {
-    color: colors.$logo-color;
-    background-color: colors.$white-color;
+    color: default.$default-color;
+    background-color: default.$contrast-color;
     font-size: 0.850em;
     padding: 8px 16px;
     cursor: pointer;
@@ -46,8 +46,7 @@
 
 
     &:hover {
-      border-color: rgba(colors.$logo-color, 0.4);
-      //background-color: colors.$accent-color;
+      border-color: rgba(default.$default-color, 0.4);
     }
   }
 }

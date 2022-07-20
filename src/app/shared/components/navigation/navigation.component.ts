@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ThemeService } from 'src/app/shared/services/theme.service';
+
 
 @Component({
   selector: 'app-navigation',
@@ -8,13 +10,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  // TODO: tornar o menu responsivo
   cloudyLogo: string = '../../../../assets/images/svg/logo.svg';
   logoDesc: string = 'Cloudy App Logo';
 
-  constructor() { }
+  constructor(private themeService: ThemeService) {}
 
-  ngOnInit(): void {
+  switchTheme(): void {
+    if (this.themeService.current === 'light') {
+        this.themeService.current = 'dark';
+    } else {
+        this.themeService.current = 'light';
+    }
   }
+
+  get currentTheme(): string {
+    return this.themeService.current;
+  }
+
+  get className(): string {
+    return this.themeService.current === 'light' ? '' : 'dark';
+  }
+
+  ngOnInit(): void {}
+
+
 
 }

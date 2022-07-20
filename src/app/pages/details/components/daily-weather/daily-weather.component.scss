@@ -1,4 +1,4 @@
-@use 'src/app/styles/colors.scss';
+@use 'src/app/styles/themes/light.scss' as default;
 
 * {
   margin: 0;
@@ -15,11 +15,11 @@
   align-items: center;
   justify-content: center;
   border-radius: 8px;
-  background-color: colors.$white-color;
+  background-color: default.$contrast-color;
 
   &__span {
     padding: 4px 9px;
-    border: 1px solid rgba(colors.$logo-color, 0.650);
+    border: 1px solid rgba(default.$default-color, 0.650);
     border-radius: 3px;
   }
 
@@ -42,5 +42,5 @@
 .temp {
   font-size: 1.210em;
   font-weight: 900;
-  color: colors.$accent-color;
+  color: default.$accent-color;
 }

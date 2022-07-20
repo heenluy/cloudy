@@ -1,4 +1,4 @@
-@use 'src/app/styles/colors.scss';
+@use 'src/app/styles/themes/light.scss' as default;
 
 * {
   margin: 0;
@@ -15,14 +15,14 @@
   .title {
     text-align: center;
     font-weight: 400;
-    color: rgba(colors.$logo-color, 0.750);
+    color: rgba(default.$default-color, 0.750);
     margin-bottom: 24px;
   }
 
   .info {
     text-align: center;
     font-weight: 400;
-    color: rgba(colors.$logo-color, 0.450);
+    color: rgba(default.$default-color, 0.450);
   }
 }
 
@@ -32,7 +32,7 @@
   width: 50%;
   background-color: white;
   border-radius: 6px;
-  border: 1px solid rgba(colors.$logo-color, 0.450);
+  border: 1px solid rgba(default.$default-color, 0.450);
   margin: 0 auto;
 
 
@@ -41,7 +41,7 @@
     height: auto;
     width: auto;
     padding: 1em;
-    border-bottom: 1px solid rgba(colors.$logo-color, 0.450);
+    border-bottom: 1px solid rgba(default.$default-color, 0.450);
     background-color: #fff;
     transition: 0.250s ease-in;
 
@@ -51,7 +51,7 @@
     }
 
     &:hover {
-      background-color: colors.$white-color;
+      background-color: default.$contrast-color;
     }
   }
 
@@ -64,7 +64,7 @@
 
 
     .item__link {
-      color: rgba(colors.$logo-color, 0.850);
+      color: rgba(default.$default-color, 0.850);
       align-self: flex-end;
       font-size: 1.1em;
       cursor: pointer;
@@ -83,14 +83,5 @@
       cursor: pointer;
     }
   }
-
-
-
-
-
-
-
-
-
 
 }
