@@ -1,0 +1,58 @@
+@use 'src/app/styles/colors.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.unit-selector {
+  display: flex;
+  height: 100%;
+  width: auto;
+  padding: 0;
+  gap: 0.650em;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+
+  &__span {
+    font-size: normal;
+    font-weight: 400;
+    color: rgba(colors.$logo-color, 0.450);
+  }
+
+  &__list {
+    display: inline-flex;
+    height: 100%;
+    width: auto;
+    gap: 1em;
+  }
+}
+
+.list__item {
+  width: auto;
+  height: auto;
+}
+
+.badge {
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 1.1em;
+
+  &-primary {
+    color: colors.$accent-color;
+    border: 1px dashed colors.$accent-color;
+    background-color: rgba(colors.$accent-color, 0.150);
+    padding: 0.250em 0.450em;
+  }
+
+  &-dark {
+    color: rgba(colors.$logo-color, 0.450);
+    background-color: initial;
+  }
+
+
+}

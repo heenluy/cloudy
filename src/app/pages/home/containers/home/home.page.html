@@ -36,6 +36,7 @@
       [cityWeather]="cityWeather"
       [isFavorite]="(isCurrentFavorite$ | async)!"
       (toggleBookmark)="onToggleBookmark()"
+      [unit]="(unit$ | async)!"
     >
     </app-home>
   </div>

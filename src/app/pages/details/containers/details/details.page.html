@@ -8,6 +8,7 @@
       <div class="details__card">
         <app-detailed-weather
           [weather]="(details$ | async)!.current"
+          [unit]="(unit$ | async)!"
         >
         </app-detailed-weather>
       </div>

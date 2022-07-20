@@ -39,9 +39,11 @@ export class DailyWeatherComponent {
   }
 
   // TODO: instalar a lib moment-timezone [x]
-  // TODO: instalar a lib ng-select e usá-la
+  // TODO: instalar a lib ng-select e usá-la [x]
+  // ------------------------------------------------
   // TODO: mostrar informações no título da página
   // TODO: criar uma troca de tema "inteligente"
   // TODO: testes unitários e de integração
+  // TODO: deploy no firebase
 
 }

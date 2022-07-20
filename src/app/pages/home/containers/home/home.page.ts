@@ -7,13 +7,14 @@ import { Observable, takeUntil, Subject, combineLatest, map } from 'rxjs';
 
 import { CityWeather } from '../../../../shared/models/weather.model';
 import { CityTypeaheadItem } from '../../../../shared/models/city-typeahead-item.model';
+import { Units } from '../../../../shared/models/units.enum';
 import { Bookmark } from '../../../../shared/models/bookmark.model';
 import { UnitSelectorComponent } from '../unit-selector/unit-selector.component';
 
-import { HomeState } from '../../state/home.reducer';
 import * as fromHomeActions from '../../state/home.actions';
 import * as fromHomeSelectors from '../../state/home.selectors';
 import * as fromBookmarksSelectors from '../../../bookmarks/state/bookmarks.selectors';
+import * as fromConfigSelectors from '../../../../shared/state/config/config.selectors';
 
 
 @Component({
@@ -33,12 +34,13 @@ export class HomePage implements OnInit, OnDestroy {
   cityWeather$!: Observable<CityWeather>;
   bookmarkList$!: Observable<Bookmark[]>;
   isCurrentFavorite$!: Observable<boolean>;
+  unit$!: Observable<Units>;
 
   private componentDestroyed$ = new Subject();
   private portalOutlet!: PortalOutlet;
 
   constructor(
-    private store: Store<HomeState>,
+    private store: Store,
     private componentFactoryResolver: ComponentFactoryResolver,
     private appRef: ApplicationRef,
     private injector: Injector
@@ -71,6 +73,8 @@ export class HomePage implements OnInit, OnDestroy {
         }
         return false;
       }));
+
+    this.unit$ = this.store.select(fromConfigSelectors.selectUnitConfig);
 
     this.setUpPortal();
   }

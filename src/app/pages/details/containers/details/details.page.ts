@@ -8,6 +8,7 @@ import { CityDailyWeather } from '../../../../shared/models/weather.model';
 import { Units } from '../../../../shared/models/units.enum';
 
 import { AppState } from '../../../../shared/state/app.reducer';
+import * as fromConfigSelectors from '../../../../shared/state/config/config.selectors';
 
 import * as fromDetailsActions from '../../state/details.actions';
 import * as fromDetailsSelectors from '../../state/details.selectors';
@@ -24,9 +25,7 @@ export class DetailsPage implements OnInit {
   loading$!: Observable<boolean>;
   error$!: Observable<boolean>;
 
-  unit$: Observable<Units> = new Observable(sbr => {
-    sbr.next(Units.Imperial);
-  });
+  unit$!: Observable<Units>;
 
   constructor(private store: Store<AppState>) {}
 
@@ -36,6 +35,8 @@ export class DetailsPage implements OnInit {
     this.details$ = this.store.select(fromDetailsSelectors.selectDetailsEntity);
     this.loading$ = this.store.select(fromDetailsSelectors.selectDetailsLoading);
     this.error$ = this.store.select(fromDetailsSelectors.selectDetailsError);
+
+    this.unit$ = this.store.select(fromConfigSelectors.selectUnitConfig);
   }
 
 
