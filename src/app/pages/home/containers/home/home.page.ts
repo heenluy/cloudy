@@ -10,6 +10,7 @@ import { CityTypeaheadItem } from '../../../../shared/models/city-typeahead-item
 import { Units } from '../../../../shared/models/units.enum';
 import { Bookmark } from '../../../../shared/models/bookmark.model';
 import { UnitSelectorComponent } from '../unit-selector/unit-selector.component';
+import { ThemeService } from 'src/app/shared/services/theme.service';
 
 import * as fromHomeActions from '../../state/home.actions';
 import * as fromHomeSelectors from '../../state/home.selectors';
@@ -43,7 +44,8 @@ export class HomePage implements OnInit, OnDestroy {
     private store: Store,
     private componentFactoryResolver: ComponentFactoryResolver,
     private appRef: ApplicationRef,
-    private injector: Injector
+    private injector: Injector,
+    private theme: ThemeService
   ){}
 
   ngOnInit(): void {
@@ -103,6 +105,14 @@ export class HomePage implements OnInit, OnDestroy {
     bookmark.coord = this.cityWeather.city.coord;
 
     this.store.dispatch(fromHomeActions.toggleBookmark({ entity: bookmark }));
+  }
+
+  get className(): string {
+    return this.theme.current === 'light' ? '' : 'dark';
+  }
+
+  get disabled_and_dark(): string {
+    return this.className === 'dark' && !this.searchControl.valid ? 'disabled_and_dark' : '';
   }
 
   private setUpPortal(): void {

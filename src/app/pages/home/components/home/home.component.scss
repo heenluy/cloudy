@@ -1,4 +1,5 @@
 @use 'src/app/styles/themes/light.scss' as default;
+@use 'src/app/styles/themes/dark.scss' as dark;
 
 .card {
   display: block;
@@ -23,6 +24,10 @@
   &__title {
     text-align: center;
     margin: 0;
+
+    &.dark {
+      color: dark.$default-color;
+    }
   }
 
   &__details {
@@ -44,9 +49,17 @@
     border: 1px solid transparent;
     transition: 0.375s ease-in-out;
 
+    &.dark {
+      color: dark.$default-color;
+      background-color: rgb(34, 34, 34);
+    }
 
     &:hover {
-      border-color: rgba(default.$default-color, 0.4);
+      border-color: rgba(default.$accent-color, 1);
     }
   }
+}
+
+.card__link.dark:hover {
+  border-color: rgba(dark.$accent-color, 1);
 }

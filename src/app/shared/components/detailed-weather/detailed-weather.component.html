@@ -5,13 +5,13 @@
       <img [src]="weatheIcon">
     </div>
 
-    <div class="desc">
+    <div class="weather__desc">
       <h3>{{ weather.temp }} {{ unitSymbol }}</h3>
-      <span>{{ weather.description }}</span>
+      <span class="desc__span" [ngClass]="className">{{ weather.description }}</span>
     </div>
   </div>
 
-  <div class="weather__misc">
+  <div class="weather__misc" [ngClass]="className">
     <div>Humidade: <strong>{{ weather.humidity }}%</strong></div>
     <div>Sensação térmica: <strong>{{ weather.feelsLike }} K</strong></div>
     <div>Velocidade do Vento: <strong>{{ weather.wind.speed }} m/s</strong></div>

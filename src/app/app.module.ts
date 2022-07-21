@@ -12,6 +12,8 @@ import { AppComponent } from './app.component';
 
 import { ComponentsModule } from './shared/components/components.module';
 import { WeatherService } from './shared/services/weather.service';
+import { ThemeService } from './shared/services/theme.service';
+
 
 import { HomeModule } from './pages/home/home.module';
 import { BookmarksModule } from './pages/bookmarks/bookmarks.module';
@@ -38,7 +40,10 @@ import { environment } from '../environments/environment';
     StoreRouterConnectingModule.forRoot({ serializer: CustomRouterSerializer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
   ],
-  providers: [WeatherService],
+  providers: [
+    WeatherService,
+    ThemeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

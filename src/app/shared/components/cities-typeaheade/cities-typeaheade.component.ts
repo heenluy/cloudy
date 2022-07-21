@@ -1,4 +1,4 @@
-import { Component, OnInit, Optional, Self } from '@angular/core';
+import { Component, OnInit, Optional, Self, ViewEncapsulation } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
 
 import {
@@ -14,11 +14,14 @@ import {
 
 import { CitiesService } from '../../services/cities.service';
 import { CityTypeaheadItem } from '../../models/city-typeahead-item.model';
+import { ThemeService } from 'src/app/shared/services/theme.service';
+
 
 @Component({
   selector: 'app-cities-typeaheade',
   templateUrl: './cities-typeaheade.component.html',
-  styleUrls: ['./cities-typeaheade.component.scss']
+  styleUrls: ['./cities-typeaheade.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class CitiesTypeaheadeComponent implements OnInit, ControlValueAccessor {
 
@@ -34,6 +37,7 @@ export class CitiesTypeaheadeComponent implements OnInit, ControlValueAccessor {
 
   constructor(
     private citiesService: CitiesService,
+    private theme: ThemeService,
     @Optional() @Self() public control: NgControl
   ) {
     this.control.valueAccessor = this;
@@ -52,6 +56,10 @@ export class CitiesTypeaheadeComponent implements OnInit, ControlValueAccessor {
       )
     )
 
+  }
+
+  get className(): string {
+    return this.theme.current === 'light' ? '' : 'dark';
   }
 
   onSelected() {

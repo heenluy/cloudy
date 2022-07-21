@@ -1,7 +1,7 @@
 <div class="container">
 
   <div class="search">
-    <h3 class="search__title">Pesquisar por região</h3>
+    <h3 class="search__title" [ngClass]="className">Pesquisar por região</h3>
 
     <div class="search__form">
       <input
@@ -9,10 +9,11 @@
         [formControl]="searchControl"
         placeholder="São Paulo..."
         class="search__control"
+        [ngClass]="className"
       >
       <button
         class="search__button"
-        [class]="{ disabled: !searchControl.valid }"
+        [ngClass]="{className, disabled_and_dark, 'disabled': !searchControl.valid}"
         [disabled]="!searchControl.valid"
         (click)="doSearch()"
       >
@@ -28,10 +29,14 @@
 
   </div>
 
-  <app-loader class="loader" *ngIf="loading$ | async"></app-loader>
+  <app-loader
+    class="loader"
+    *ngIf="loading$ | async"
+    [ngClass]="className"
+  >
+  </app-loader>
 
   <div class="card" *ngIf="!(loading$ | async) && !(error$ | async) && !!cityWeather">
-    <!-- {{ (cityWeather$ | async)!.weather.description }} -->
     <app-home
       [cityWeather]="cityWeather"
       [isFavorite]="(isCurrentFavorite$ | async)!"
@@ -41,7 +46,7 @@
     </app-home>
   </div>
 
-  <div class="failure" *ngIf="!(loading$ | async) && (error$ | async)">
+  <div class="failure" [ngClass]="className" *ngIf="!(loading$ | async) && (error$ | async)">
     Ocorreu um erro.
   </div>
 </div>

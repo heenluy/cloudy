@@ -1,6 +1,6 @@
 <div class="card">
   <div class="card__body">
-    <h2 class="card__title">{{ city }}</h2>
+    <h2 class="card__title" [ngClass]="className">{{ city }}</h2>
 
     <app-detailed-weather
       [weather]="cityWeather.weather"
@@ -13,12 +13,14 @@
       <a
         class="card__link"
         (click)="onToggleBookmark()"
+        [ngClass]="className"
       >
         {{isFavorite ? 'Remover dos Favoritos' : 'Adicionar aos favoritos'}}
       </a>
       <a
         class="card__link"
         routerLink="/details"
+        [ngClass]="className"
         [queryParams]="{ lat: cityWeather.city.coord.lat, lon: cityWeather.city.coord.lon }"
       >
         Ver detalhes

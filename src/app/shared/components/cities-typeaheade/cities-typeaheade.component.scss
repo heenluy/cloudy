@@ -62,3 +62,22 @@
         transform: translate(19px, 0);
     }
 }
+
+.ng-select.dark .ng-select-container {
+  background-color: #191919;
+  color: #fff;
+}
+
+.ng-select.dark .ng-select-container .ng-value-container .ng-input > input  {
+  color: #fff;
+}
+
+.ng-select.dark .ng-option {
+  background-color: #191919;
+  color: #fff;
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked {
+  background-color: #191919;
+  color: #fff;
+}

@@ -9,6 +9,8 @@
   [disabled]="disabled"
   [loading]="loading"
   (change)="onSelected()"
+  appearence="outline"
+  [ngClass]="className"
 >
   <ng-template ng-loadingspinner-tmp>
         <div class="lds-ellipsis">
