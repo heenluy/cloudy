@@ -1,6 +1,3 @@
-@use 'src/app/styles/themes/light.scss' as default;
-@use 'src/app/styles/themes/dark.scss' as dark;
-
 .weather {
   display: flex;
   height: 65%;
@@ -20,16 +17,10 @@
 
     h3 {
       margin: 0 0 5.5px 0;
-      color: default.$accent-color;
     }
 
     .desc__span {
       text-transform: capitalize;
-      color: rgba(default.$default-color, 0.900);
-
-      &.dark {
-        color: rgba(dark.$default-color, 0.900);
-      }
     }
 
   }
@@ -37,10 +28,5 @@
   &__misc {
     display: inline-flex;
     gap: 1em;
-    color: rgba(default.$default-color, 0.650);
-
-    &.dark {
-      color: rgba(dark.$default-color, 0.650);
-    }
   }
 }

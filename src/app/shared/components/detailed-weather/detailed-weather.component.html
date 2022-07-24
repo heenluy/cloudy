@@ -7,11 +7,11 @@
 
     <div class="weather__desc">
       <h3>{{ weather.temp }} {{ unitSymbol }}</h3>
-      <span class="desc__span" [ngClass]="className">{{ weather.description }}</span>
+      <span class="desc__span">{{ weather.description }}</span>
     </div>
   </div>
 
-  <div class="weather__misc" [ngClass]="className">
+  <div class="weather__misc">
     <div>Humidade: <strong>{{ weather.humidity }}%</strong></div>
     <div>Sensação térmica: <strong>{{ weather.feelsLike }} K</strong></div>
     <div>Velocidade do Vento: <strong>{{ weather.wind.speed }} m/s</strong></div>

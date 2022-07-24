@@ -1,7 +1,4 @@
-@use 'src/app/styles/themes/light.scss' as default;
-@use 'src/app/styles/themes/dark.scss' as dark;
-
-.card {
+.home-card {
   display: block;
   height: 100%;
   width: 100%;
@@ -24,10 +21,6 @@
   &__title {
     text-align: center;
     margin: 0;
-
-    &.dark {
-      color: dark.$default-color;
-    }
   }
 
   &__details {
@@ -40,26 +33,9 @@
   }
 
   &__link {
-    color: default.$default-color;
-    background-color: default.$contrast-color;
     font-size: 0.850em;
     padding: 8px 16px;
     cursor: pointer;
     border-radius: 5px;
-    border: 1px solid transparent;
-    transition: 0.375s ease-in-out;
-
-    &.dark {
-      color: dark.$default-color;
-      background-color: rgb(34, 34, 34);
-    }
-
-    &:hover {
-      border-color: rgba(default.$accent-color, 1);
-    }
   }
-}
-
-.card__link.dark:hover {
-  border-color: rgba(dark.$accent-color, 1);
 }

@@ -1,22 +1,12 @@
-@use 'src/app/styles/themes/light.scss' as default;
-@use 'src/app/styles/themes/dark.scss' as dark;
-
 .navbar {
   display: flex;
   height: 64px;
   width: 100%;
   margin: 0;
   padding: 0 1em;
-  color: default.$default-color;
-  background-color: default.$contrast-color;
-  border-bottom: 1px solid rgba(default.$default-color, 0.4);
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-
-  &.dark {
-    border-bottom: 1px solid rgba(dark.$default-color, 0.8);
-  }
 
   &__main {
     display: flex;
@@ -30,16 +20,10 @@
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: normal;
-    color: rgba(default.$default-color, 0.950);
     cursor: pointer;
-    transition: 0.250s ease-in-out;
 
     &:hover {
-      letter-spacing: 0.900px;
-    }
-
-    &.dark {
-      color: rgba(dark.$default-color, 0.950);
+      letter-spacing: 1px;
     }
   }
 
@@ -56,28 +40,13 @@
     text-align: center;
     font-size: 1.050em;
     font-weight: normal;
-    color: rgba(default.$default-color, 0.8);
-    border-bottom: 1px solid transparent;
     padding-bottom: 6px;
     cursor: pointer;
-    transition: 0.4s ease-out;
-
-    &:hover {
-      border-bottom: 1px solid rgba(default.$default-color, 0.6);
-    }
-
-    &.dark {
-      color: rgba(dark.$default-color, 0.9);
-
-      &:hover {
-        border-bottom: 1px solid rgba(dark.$default-color, 0.9);
-      }
-    }
   }
 
-  &.dark {
-    color: dark.$default-color;
-    background-color: dark.$contrast-color;
-
+  &__icon {
+    cursor: pointer;
+    max-height: 22px;
+    align-self: baseline;
   }
 }

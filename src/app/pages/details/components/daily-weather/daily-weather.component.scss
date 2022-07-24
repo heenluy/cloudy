@@ -1,10 +1,4 @@
-@use 'src/app/styles/themes/light.scss' as default;
-
-* {
-  margin: 0;
-}
-
-.card {
+.daily-weather {
   display: flex;
   height: auto;
   width: 46vw;
@@ -15,11 +9,9 @@
   align-items: center;
   justify-content: center;
   border-radius: 8px;
-  background-color: default.$contrast-color;
 
   &__span {
     padding: 4px 9px;
-    border: 1px solid rgba(default.$default-color, 0.650);
     border-radius: 3px;
   }
 
@@ -42,5 +34,4 @@
 .temp {
   font-size: 1.210em;
   font-weight: 900;
-  color: default.$accent-color;
 }

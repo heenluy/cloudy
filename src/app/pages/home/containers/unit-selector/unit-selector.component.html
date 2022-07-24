@@ -1,6 +1,6 @@
-<div class="unit-selector" [ngClass]="className">
-  <span class="unit-selector__span" [ngClass]="className">Unidade:</span>
-  <ul class="unit-selector__list" [ngClass]="className">
+<div class="unit-selector">
+  <span class="unit-selector__span">Unidade:</span>
+  <ul class="unit-selector__list">
     <li class="list__item" (click)="updateUnit(unitsEnum.Metric)">
       <a class="badge" [ngClass]="unit === unitsEnum.Metric ? 'badge-primary' : 'badge-dark'">˚C</a>
     </li>

@@ -1,6 +1,3 @@
-@use 'src/app/styles/themes/light.scss' as default;
-@use 'src/app/styles/themes/dark.scss' as dark;
-
 $control-width: 384px;
 
 .container {
@@ -16,12 +13,11 @@ $control-width: 384px;
   height: 25%;
   width: 80%;
   margin: 0 auto;
-  padding: 1em;
+  padding: 3em 0 0 0;
   flex-direction: column;
   align-items: center;
   background-color: inherit;
 
-  // Form Container
   &__form {
     display: flex;
     height: auto;
@@ -29,18 +25,13 @@ $control-width: 384px;
     padding: 0;
     margin: 0;
     gap: 0.350em;
-    background-color: inherit;
   }
 
   &__title {
-    color: rgba(default.$default-color, 0.750);
     font-size: 1.4em;
     font-weight: 400;
     text-align: center;
-
-    &.dark {
-      color: rgba(dark.$default-color, 1);
-    }
+    margin-bottom: 1em;
   }
 
   &__control {
@@ -49,40 +40,16 @@ $control-width: 384px;
     text-align: left;
     outline: none;
     font-size: 1em;
-    border: 1px solid rgba(default.$default-color, 0.300);
     border-radius: 4px;
-    background-color: transparent;
-    color: rgba(default.$default-color, 1);
-
-    &.dark {
-      border: 1px solid rgba(dark.$default-color, 0.750);
-      border-radius: 4px;
-      color: rgba(dark.$default-color, 1);
-    }
-
-    &::placeholder {
-      color: rgba(default.$default-color, 0.450);
-    }
   }
 
 
   &__button {
-    color: default.$accent-color;
-    background-color: rgba(default.$accent-color, 0.250);
-    border: 1px dashed default.$accent-color;
     border-radius: 2px;
     cursor: pointer;
 
     &.disabled {
-      color: rgba(default.$default-color, 0.450);
-      border-color: rgba(default.$default-color, 0.450);
-      background-color: initial;
       cursor: no-drop;
-    }
-
-    &.dark {
-      color: dark.$default-color;
-      border: 1px solid white;
     }
   }
 
@@ -99,21 +66,10 @@ $control-width: 384px;
   margin: 2.450em auto;
 }
 
-.card {
+.current-weather {
   display: block;
   height: auto;
   width: auto;
   margin: 0 auto;
   background-color: initial;
-}
-
-.search__control.dark::placeholder {
-  color: rgba(dark.$default-color, 1);
-}
-
-.search__button.disabled_and_dark {
-  color: rgba(dark.$default-color, 0.450);
-  border-color: rgba(dark.$default-color, 0.450);
-  background-color: initial;
-  cursor: no-drop;
 }

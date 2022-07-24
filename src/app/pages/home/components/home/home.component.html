@@ -1,26 +1,24 @@
-<div class="card">
-  <div class="card__body">
-    <h2 class="card__title" [ngClass]="className">{{ city }}</h2>
+<div class="home-card">
+  <div class="home-card__body">
+    <h2 class="home-card__title">{{ city }}</h2>
 
     <app-detailed-weather
       [weather]="cityWeather.weather"
       [unit]="unit"
-      class="card__details"
+      class="home-card__details"
     >
     </app-detailed-weather>
 
-    <div class="card__actions">
+    <div class="home-card__actions">
       <a
-        class="card__link"
+        class="home-card__link"
         (click)="onToggleBookmark()"
-        [ngClass]="className"
       >
         {{isFavorite ? 'Remover dos Favoritos' : 'Adicionar aos favoritos'}}
       </a>
       <a
-        class="card__link"
+        class="home-card__link"
         routerLink="/details"
-        [ngClass]="className"
         [queryParams]="{ lat: cityWeather.city.coord.lat, lon: cityWeather.city.coord.lon }"
       >
         Ver detalhes

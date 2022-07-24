@@ -3,7 +3,7 @@
 
   <ng-template #showTemplate>
     <ng-container *ngIf="!(error$ | async)">
-      <h2>{{ (details$ | async)!.city.name }}, {{ (details$ | async)!.city.country }}</h2>
+      <h2 class="details__title">{{ (details$ | async)!.city.name }}, {{ (details$ | async)!.city.country }}</h2>
 
       <div class="details__card">
         <app-detailed-weather

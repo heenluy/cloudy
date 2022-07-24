@@ -1,16 +1,11 @@
-<nav class="navbar" [ngClass]="className">
+<nav class="navbar">
   <div class="navbar__main">
-    <span
-      [title]="logoDesc"
-      class="navbar__logo"
-      [ngClass]="className"
-    >
-      Cloudy
-    </span>
+    <span [title]="logoDesc" class="navbar__logo">Cloudy</span>
+
     <ul class="navbar__list">
-      <li><a class="navbar__link" [ngClass]="className" routerLink="">Início</a></li>
-      <li><a class="navbar__link" [ngClass]="className" routerLink="bookmarks">Favoritos</a></li>
-      <button (click)="switchTheme()">{{ currentTheme }}</button>
+      <li><a class="navbar__link" routerLink="">Início</a></li>
+      <li><a class="navbar__link" routerLink="bookmarks">Favoritos</a></li>
+      <img (click)="switchTheme()" src="{{ themeIcon }}" class="navbar__icon" [title]="themeTitle">
     </ul>
   </div>
   <div id="navbar-portal-outlet"></div>

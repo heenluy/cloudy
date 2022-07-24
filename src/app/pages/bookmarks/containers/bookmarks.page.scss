@@ -1,10 +1,4 @@
-@use 'src/app/styles/themes/light.scss' as default;
-
-* {
-  margin: 0;
-}
-
-.container {
+.bookmark {
   display: block;
   height: auto;
   width: 100%;
@@ -15,43 +9,31 @@
   .title {
     text-align: center;
     font-weight: 400;
-    color: rgba(default.$default-color, 0.750);
     margin-bottom: 24px;
   }
 
   .info {
     text-align: center;
     font-weight: 400;
-    color: rgba(default.$default-color, 0.450);
   }
 }
 
 .bookmarks {
   display: block;
   height: 50%;
-  width: 50%;
-  background-color: white;
+  width: 37%;
   border-radius: 6px;
-  border: 1px solid rgba(default.$default-color, 0.450);
   margin: 0 auto;
 
 
   &__list {
     display: block;
     height: auto;
-    width: auto;
-    padding: 1em;
-    border-bottom: 1px solid rgba(default.$default-color, 0.450);
-    background-color: #fff;
-    transition: 0.250s ease-in;
-
+    width: fit;
+    padding: 0.450em 0;
 
     &:last-child {
       border-bottom: none;
-    }
-
-    &:hover {
-      background-color: default.$contrast-color;
     }
   }
 
@@ -64,7 +46,6 @@
 
 
     .item__link {
-      color: rgba(default.$default-color, 0.850);
       align-self: flex-end;
       font-size: 1.1em;
       cursor: pointer;
@@ -74,8 +55,6 @@
       display: block;
       height: 24px;
       width: 24px;
-      color: initial;
-      background-color: initial;
       border: none;
       align-self: baseline;
       padding: 0;
