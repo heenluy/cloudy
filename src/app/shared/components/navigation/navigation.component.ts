@@ -11,24 +11,26 @@ import { ThemeService } from 'src/app/shared/services/theme.service';
 export class NavigationComponent implements OnInit {
 
   cloudyLogo: string = '../../../../assets/images/svg/logo.svg';
+  sunIcon: string = '../../../../assets/images/svg/sun.svg';
+  moonIcon: string = '../../../../assets/images/svg/moon.svg';
   logoDesc: string = 'Cloudy App Logo';
 
   constructor(private themeService: ThemeService) {}
 
   switchTheme(): void {
-    if (this.themeService.current === 'light') {
-        this.themeService.current = 'dark';
-    } else {
+    if (this.themeService.current === 'dark') {
         this.themeService.current = 'light';
+    } else {
+        this.themeService.current = 'dark';
     }
   }
 
-  get currentTheme(): string {
-    return this.themeService.current;
+  get themeIcon(): string {
+    return this.themeService.current === 'dark' ? this.moonIcon : this.sunIcon;
   }
 
-  get className(): string {
-    return this.themeService.current === 'light' ? '' : 'dark';
+  get themeTitle(): string {
+    return this.themeService.current === 'dark' ? 'Tema Escuro' : 'Tema Claro';
   }
 
   ngOnInit(): void {}
