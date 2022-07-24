@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 24 24"
+   version="1.1"
+   id="svg1050"
+   sodipodi:docname="sun.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1054" />
+  <sodipodi:namedview
+     id="namedview1052"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="20.416667"
+     inkscape:cx="12"
+     inkscape:cy="12"
+     inkscape:window-width="1366"
+     inkscape:window-height="699"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1050" />
+  <g
+     data-name="Layer 2"
+     id="g1048"
+     style="fill:#3399ff;fill-opacity:1">
+    <g
+       data-name="sun"
+       id="g1046"
+       style="fill:#3399ff;fill-opacity:1">
+      <rect
+         width="24"
+         height="24"
+         transform="rotate(180 12 12)"
+         opacity="0"
+         id="rect1026"
+         style="fill:#3399ff;fill-opacity:1" />
+      <path
+         d="M12 6a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v2a1 1 0 0 0 1 1z"
+         id="path1028"
+         style="fill:#3399ff;fill-opacity:1" />
+      <path
+         d="M21 11h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2z"
+         id="path1030"
+         style="fill:#3399ff;fill-opacity:1" />
+      <path
+         d="M6 12a1 1 0 0 0-1-1H3a1 1 0 0 0 0 2h2a1 1 0 0 0 1-1z"
+         id="path1032"
+         style="fill:#3399ff;fill-opacity:1" />
+      <path
+         d="M6.22 5a1 1 0 0 0-1.39 1.47l1.44 1.39a1 1 0 0 0 .73.28 1 1 0 0 0 .72-.31 1 1 0 0 0 0-1.41z"
+         id="path1034"
+         style="fill:#3399ff;fill-opacity:1" />
+      <path
+         d="M17 8.14a1 1 0 0 0 .69-.28l1.44-1.39A1 1 0 0 0 17.78 5l-1.44 1.42a1 1 0 0 0 0 1.41 1 1 0 0 0 .66.31z"
+         id="path1036"
+         style="fill:#3399ff;fill-opacity:1" />
+      <path
+         d="M12 18a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1z"
+         id="path1038"
+         style="fill:#3399ff;fill-opacity:1" />
+      <path
+         d="M17.73 16.14a1 1 0 0 0-1.39 1.44L17.78 19a1 1 0 0 0 .69.28 1 1 0 0 0 .72-.3 1 1 0 0 0 0-1.42z"
+         id="path1040"
+         style="fill:#3399ff;fill-opacity:1" />
+      <path
+         d="M6.27 16.14l-1.44 1.39a1 1 0 0 0 0 1.42 1 1 0 0 0 .72.3 1 1 0 0 0 .67-.25l1.44-1.39a1 1 0 0 0-1.39-1.44z"
+         id="path1042"
+         style="fill:#3399ff;fill-opacity:1" />
+      <path
+         d="M12 8a4 4 0 1 0 4 4 4 4 0 0 0-4-4z"
+         id="path1044"
+         style="fill:#3399ff;fill-opacity:1" />
+    </g>
+  </g>
+</svg>

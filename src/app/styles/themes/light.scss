@@ -1,3 +1,209 @@
 $default-color: #191919;
 $contrast-color: #f5f5f5;
 $accent-color: #3399FF;
+
+* {
+  margin: 0;
+}
+
+// Navbar
+.navbar {
+  color: $default-color;
+  background-color: $contrast-color;
+  border-bottom: 1px solid rgba($default-color, 0.4);
+
+  &__logo {
+    color: rgba($default-color, 0.950);
+    cursor: pointer;
+    transition: 0.250s ease-in-out;
+  }
+
+  &__link {
+    color: rgba($default-color, 0.8);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 6px;
+    transition: 0.4s ease-out;
+
+    &:hover {
+      border-bottom: 1px solid rgba($default-color, 0.6);
+    }
+  }
+}
+
+// Loader
+.loading {
+  border: 4.25px solid $contrast-color;
+  border-top-color: rgba($default-color, 0.425);
+  background-color: transparent;
+  animation: spin 0.8s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+
+// Detailed weather
+.weather {
+  &__desc {
+
+    h3 {
+      margin: 0 0 5.5px 0;
+      color: $accent-color;
+    }
+
+    .desc__span {
+      color: rgba($default-color, 0.900);
+    }
+
+  }
+
+  &__misc {
+    color: rgba($default-color, 0.650);
+  }
+}
+
+// Unit Selector
+.unit-selector {
+  &__span {
+    color: rgba($default-color, 0.450);
+  }
+
+  &__list {
+    color: rgba($default-color, 0.450);
+  }
+}
+
+.badge {
+
+  &-primary {
+    color: $accent-color;
+    border: 1px dashed $accent-color;
+    background-color: rgba($accent-color, 0.150);
+  }
+}
+
+// Home(Container)
+.container, .app-container {
+  background-color: $contrast-color;
+}
+
+.search {
+  background-color: inherit;
+
+  &__form {
+    background-color: inherit;
+  }
+
+  &__title {
+    color: rgba($default-color, 0.750);
+  }
+
+  &__control {
+    border: 1px solid rgba($default-color, 0.300);
+    background-color: transparent;
+    color: rgba($default-color, 1);
+
+    &::placeholder {
+      color: rgba($default-color, 0.450);
+    }
+  }
+
+
+  &__button {
+    color: $accent-color;
+    background-color: rgba($accent-color, 0.250);
+    border: 1px dashed $accent-color;
+
+    &.disabled {
+      color: rgba($default-color, 0.450);
+      border-color: rgba($default-color, 0.450);
+      background-color: initial;
+    }
+  }
+}
+
+.current-weather {
+  background-color: initial;
+}
+
+// Home(Component)
+.home-card {
+  &__title {
+    color: $default-color;
+  }
+
+  &__link {
+    color: $default-color;
+    background-color: rgba($default-color, 0.1);
+    border: 1px solid transparent;
+    transition: 0.375s ease-in-out;
+
+    &:hover {
+      border-color: rgba($accent-color, 1);
+    }
+  }
+}
+
+// Details(Container)
+.details__subtitle, .details__title {
+  color: $default-color;
+}
+
+// daily-weather
+.daily-weather {
+  background-color: rgba($default-color, 0.030);
+
+  &__span {
+    border: 1px solid rgba($default-color, 0.650);
+    color: $default-color;
+  }
+
+  section {
+    color: $default-color;
+
+  }
+}
+
+.temp {
+  color: $accent-color;
+}
+
+// bookmark
+.bookmark {
+  .title {
+    color: rgba($default-color, 0.750);
+  }
+
+  .info {
+    color: rgba($default-color, 0.450);
+  }
+}
+
+.bookmarks {
+  background-color: $contrast-color;
+  border: 1px solid rgba($default-color, 0.450);
+
+
+  &__list {
+    border-bottom: 1px solid rgba($default-color, 0.450);
+    background-color: $contrast-color;
+    transition: 0.250s ease-in;
+
+    &:hover {
+      background-color: rgba($default-color, 0.030);
+    }
+  }
+
+  &__item {
+    .item__link {
+      color: rgba($default-color, 0.850);
+    }
+
+    .item__button {
+      color: initial;
+      background-color: initial;
+    }
+  }
+
+}
