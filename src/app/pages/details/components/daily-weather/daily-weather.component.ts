@@ -42,7 +42,8 @@ export class DailyWeatherComponent {
   // TODO: instalar a lib ng-select e usá-la [x]
   // ------------------------------------------------
   // TODO: mostrar informações no título da página
-  // TODO: criar uma troca de tema "inteligente"
+  // TODO: responsividade básica sem menu mobile
+  // TODO: criar uma troca de tema "inteligente" [x]
   // TODO: testes unitários e de integração
   // TODO: deploy no firebase
 

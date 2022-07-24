@@ -8,7 +8,6 @@ import { Units } from 'src/app/shared/models/units.enum';
 import * as fromConfigActions from '../../../../shared/state/config/config.actions';
 import * as fromConfigSelectors from '../../../../shared/state/config/config.selectors';
 
-import { ThemeService } from 'src/app/shared/services/theme.service';
 
 @Component({
   selector: 'app-unit-selector',
@@ -23,8 +22,7 @@ export class UnitSelectorComponent implements OnInit {
   unitsEnum = Units;
 
   constructor(
-    private store: Store<AppState>,
-    private theme: ThemeService
+    private store: Store<AppState>
   ) { }
 
   ngOnInit(): void {
@@ -36,10 +34,6 @@ export class UnitSelectorComponent implements OnInit {
 
   updateUnit(unit: Units): void {
     this.store.dispatch(fromConfigActions.updateUnit({ unit }));
-  }
-
-  get className(): string {
-    return this.theme.current === 'light' ? '' : 'dark';
   }
 
 }
