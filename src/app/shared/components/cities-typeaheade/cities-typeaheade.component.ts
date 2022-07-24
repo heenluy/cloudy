@@ -14,6 +14,7 @@ import {
 
 import { CitiesService } from '../../services/cities.service';
 import { CityTypeaheadItem } from '../../models/city-typeahead-item.model';
+import { ThemeService } from '../../services/theme.service';
 
 
 @Component({
@@ -36,6 +37,7 @@ export class CitiesTypeaheadeComponent implements OnInit, ControlValueAccessor {
 
   constructor(
     private citiesService: CitiesService,
+    private theme: ThemeService,
     @Optional() @Self() public control: NgControl
   ) {
     this.control.valueAccessor = this;
@@ -54,6 +56,10 @@ export class CitiesTypeaheadeComponent implements OnInit, ControlValueAccessor {
       )
     )
 
+  }
+
+  get darkStyle(): string {
+    return this.theme.current === 'light' ? '' : 'dark';
   }
 
   onSelected() {

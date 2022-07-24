@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { ComponentsModule } from './shared/components/components.module';
 import { WeatherService } from './shared/services/weather.service';
 import { ThemeService } from './shared/services/theme.service';
+import { BookmarksInfo } from './app-routing.module';
 
 
 import { HomeModule } from './pages/home/home.module';
@@ -42,7 +43,8 @@ import { environment } from '../environments/environment';
   ],
   providers: [
     WeatherService,
-    ThemeService
+    ThemeService,
+    BookmarksInfo
   ],
   bootstrap: [AppComponent]
 })
