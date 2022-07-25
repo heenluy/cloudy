@@ -44,9 +44,92 @@
     cursor: pointer;
   }
 
-  &__icon {
-    cursor: pointer;
-    max-height: 22px;
-    align-self: baseline;
+  &__list li:last-child {
+
+    .mobile__span {
+      display: none;
+      text-align: center;
+      font-size: 1.050em;
+      font-weight: normal;
+    }
+
+    .navbar__icon {
+      display: block;
+      height: 22px;
+      width: auto;
+      margin: 0;
+      padding: 0;
+      cursor: pointer;
+      max-height: 22px;
+      align-self: baseline;
+    }
+  }
+}
+
+.navbar__menu {
+  display: none;
+}
+
+@media(max-width: 618px) {
+  .navbar {
+    &__list {
+      display: none;
+    }
+
+    &__menu {
+      display: block;
+      cursor: pointer;
+      height: 28px;
+      width: auto;
+    }
+  }
+
+}
+
+@media(max-width: 618px) {
+  .navbar__main.mobile {
+
+    .navbar__list {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: calc(100% - 64px);
+      z-index: 1000;
+      top: 64px;
+      left: 0;
+    }
+
+    .navbar__list li {
+      width: 100%;
+      box-sizing: border-box;
+      display: block;
+      margin: 0;
+      padding: 0.450em 0 0.450em 1em;
+    }
+
+    .navbar__link {
+      width: 100%;
+      margin: 0;
+      transition: none;
+
+      &:hover {
+        border: none;
+      }
+
+    }
+
+    .navbar__list li:last-child {
+      display: flex;
+      gap: 0.250em;
+
+      span {
+        display: block;
+        text-align: left;
+      }
+
+      .navbar__icon {
+        display: block;
+      }
+    }
   }
 }

@@ -42,3 +42,20 @@
     padding: 0.250em 0.450em;
   }
 }
+
+@media(max-width: 618px) {
+  .unit-selector {
+    &__span {
+      display: none;
+    }
+  }
+
+  .badge {
+    border-radius: 4px;
+    font-size: 1em;
+
+    &-primary {
+      padding: 0.150em 0.350em;
+    }
+  }
+}

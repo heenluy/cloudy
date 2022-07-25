@@ -29,6 +29,26 @@ $accent-color: #3399FF;
       border-bottom: 1px solid rgba($default-color, 0.9);
     }
   }
+
+  .navbar__main.mobile {
+    .navbar__list {
+      background-color: $contrast-color;
+    }
+
+    .navbar__list li {
+      border-bottom: 1px solid rgba($default-color, 0.4);
+
+      &:hover {
+        background-color: rgba($default-color, 0.050);
+      }
+    }
+
+    .navbar__list li:last-child {
+      span {
+        color: rgba($default-color, 0.8);
+      }
+    }
+  }
 }
 
 // Loader

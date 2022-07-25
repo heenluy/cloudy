@@ -13,7 +13,10 @@ export class NavigationComponent implements OnInit {
   cloudyLogo: string = '../../../../assets/images/svg/logo.svg';
   sunIcon: string = '../../../../assets/images/svg/sun.svg';
   moonIcon: string = '../../../../assets/images/svg/moon.svg';
+  menuIcon: string = '../../../../assets/images/svg/menu-2-outline.svg';
+  closeIcon: string = '../../../../assets/images/svg/close-outline.svg';
   logoDesc: string = 'Cloudy App Logo';
+  isOpen: boolean = false;
 
   constructor(private themeService: ThemeService) {}
 
@@ -23,6 +26,10 @@ export class NavigationComponent implements OnInit {
     } else {
         this.themeService.current = 'dark';
     }
+  }
+
+  toggleMenu(): void {
+    this.isOpen = !this.isOpen;
   }
 
   get themeIcon(): string {
