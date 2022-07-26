@@ -1,7 +1,7 @@
 .daily-weather {
   display: flex;
   height: auto;
-  width: 46vw;
+  width: 78vw;
   box-sizing: border-box;
   padding: 1em;
   flex-direction: column;
@@ -34,4 +34,20 @@
 .temp {
   font-size: 1.210em;
   font-weight: 900;
+}
+
+@media(max-width: 460px) {
+  .daily-weather {
+    &__sections {
+
+      section {
+        display: flex;
+        flex-direction: column;
+
+        div {
+          text-align: center;
+        }
+      }
+    }
+  }
 }

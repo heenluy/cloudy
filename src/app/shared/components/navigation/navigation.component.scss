@@ -133,3 +133,9 @@
     }
   }
 }
+
+@media(max-width: 300px) {
+  .navbar__logo {
+    font-size: 1.2em;
+  }
+}

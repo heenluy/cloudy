@@ -21,7 +21,7 @@
 .bookmarks {
   display: block;
   height: 50%;
-  width: 37%;
+  width: 300px;
   border-radius: 6px;
   margin: 0 auto;
 
@@ -63,4 +63,10 @@
     }
   }
 
+}
+
+@media(max-width: 300px) {
+  .bookmarks {
+    width: 180px;
+  }
 }
